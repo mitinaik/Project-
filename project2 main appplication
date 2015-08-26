@@ -1,0 +1,103 @@
+# Project-
+//Miti Naik
+//august 9 2015
+
+// This program askes the users to enter the discount rate of an item then it calls the superclass and subbclass, gives the output message by using iniheritaance. 
+// Then this program askes users to enter the name of the file using the printerwriter and scanner method. This program then inputs the following information 
+// in to the file, then the program outputs the file with the Number of months, The totalsales, and the average sales of this program.
+// This specific program need a null file then it inputs the information in to the null file. This program has a two abstract method within the interface. 
+// The abstract method specifies the type of the store, and item sold in the stotre. This program also has a overriding and overloading methods.
+// This program also uses polymorphism to call the methods. 
+// This program also haas loop if the file is not null.
+//This program try and cathces method if the file was not found or error.
+// This program askes the user of amount of the totalsales for the store.
+// This program then askes the user of number of customer by asking the sales of customer.
+//This program then computes the average sales and output the result in to the name of the file given.
+
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class project
+{
+   public static void main(String[] args)
+   {
+   Scanner keyboard = new Scanner(System.in);
+   DecimalFormat num = new DecimalFormat("#,###.00");
+   String filename = " ";
+   int months= 1;
+   double sales = 0.0, totalsales = 0.0, averagesales, discount;
+   final double salestax = 0.10;
+   //this is abstract methods used within the interface
+    info s = new info();
+    s.storetype();
+    s.itemtype();
+    s.noofitem();
+        
+   System.out.print(" Enter the discount rate:");
+   discount = keyboard.nextDouble();
+   keyboard.nextLine();
+   //inheritance// method overloading and overriding
+   subclass overriding = new subclass();
+   overriding.demo("hello");
+   overriding.demo("    Welcome");
+   subclass information = new subclass();
+   information.methodoverload();
+   
+   subclass obj = new subclass(salestax ,discount);// This information is derive from super class ans merging from subclass
+   System.out.println(obj);
+   
+   
+   //open the file
+   System.out.print(" Enter the file name:");
+   filename = keyboard.nextLine();
+   
+//try and catch method
+   try
+   {
+      //inputfile
+   File file = new File(filename);
+   Scanner inputfile = new Scanner(file);
+   
+   System.out.print(" Enter the totalsales $:");
+   totalsales = keyboard.nextDouble();
+   
+   System.out.print(" Enter the amount of sales customer :");
+   sales = keyboard.nextDouble();
+   
+   while (inputfile== null)
+   {
+   sales = inputfile.nextDouble();
+   totalsales = totalsales + sales;
+   months++;
+     totalsales = inputfile.nextDouble();
+    }
+   //output file
+   
+    FileWriter fwriter = new FileWriter(filename);
+   PrintWriter outputFile = new PrintWriter(fwriter);
+    averagesales = totalsales/sales;
+
+   String I = (" The discount in the store " + discount +"\n"+ "\n Number of months is " + months + "\n" +"\n Totals sales is "+ sales+ "\n"
+                     + "\n Average Sales is " + averagesales );
+
+
+
+     outputFile.println(I);
+         outputFile.close();
+
+   
+   inputfile.close();
+   
+
+   
+      }
+
+   catch( Exception e)
+   { System.out.println(e.getMessage());}
+   }
+   }
+   
+   
+   
