@@ -1,0 +1,35 @@
+# Project-
+//Miti Naik
+//agusut 9 2015
+// super class which includes all the accessor and mutator methods
+public class superclass
+{
+// data members
+   private double salestax;
+   
+   public superclass()
+   { salestax = 0.10;}
+   // accessor and mutator methods in the super class
+   public void setsalestax(double salestax)
+   { this.salestax = salestax;}
+   public double getsalestax()
+   { return salestax;}
+   void demo(String a)
+   {  System.out.println(" just a demo" + a);}
+   void demo(String a, String b)
+   {  System.out.println(" just a demo " + a + " another demo" + b);
+   }
+   public static String methodoverload()
+   {
+   String a = (" This program calculates the totalsales");
+   return a;
+   }
+   // to string method 
+   
+   public String toString()
+   {
+      String str = methodoverload()+"\n The sales tax is " + salestax;
+      return str;
+   }
+
+}
