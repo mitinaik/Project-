@@ -1,0 +1,17 @@
+# Project-
+// Miti Naik
+//august 9 2015
+// This a class which calls the interface type and specifies the abstract class.
+public class interface1 implements type
+
+{
+public void storetype()
+{ System.out.println(" This is a retail store");
+}
+public void itemtype()
+{ System.out.println(" This store sells all type of items");
+}
+public int noofitem()
+{
+return 100;}
+}
