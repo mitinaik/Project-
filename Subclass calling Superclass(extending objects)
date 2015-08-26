@@ -1,0 +1,38 @@
+# Project-
+//Miti Naik
+//august 9 2015
+// this is a subclass which extends the superclass.
+public class subclass extends superclass
+{
+//data memebers in the subclass
+   private double discount;
+   public subclass()
+   {
+      super();
+      discount = 0.0;
+   }
+   
+     public subclass(double Tax, double d)
+   { 
+   super();
+   discount = d;}
+   // accessor and mutator method
+   public void setdiscount(double d)
+   { discount = d;}
+   public double getdiscount()
+   { return discount;}
+   // to string method
+   public static String methodoverload()
+   {
+String a= (" subclass:This program calculates the totalsales");
+   return a;
+   }
+   // to string methods
+
+   public String toString()
+   {
+      String str = super.toString() +"\n  The dicount for the item is " + discount;
+      return str;
+      
+    }
+}
