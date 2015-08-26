@@ -1,0 +1,9 @@
+# Project-
+//Miti
+//august 9 2015
+//interface method using two abstract class 
+interface type
+{
+public void storetype();
+public void itemtype();
+}
